@@ -3,7 +3,7 @@ function checkRisk() {
     const age = parseInt(document.getElementById('age').value);
     const risk = document.getElementById('risk').value;
     const output = document.getElementById('output');
-
+    var response = "";
     const responses = [
             "I think you should buy Bitcoin.",
             "Have you considered buying Bitcoin?",
@@ -46,9 +46,35 @@ function checkRisk() {
             "In light of economic uncertainties, Bitcoin might serve as a digital store of value.",
             "Evaluating its historical performance, Bitcoin exhibits a high-risk, high-reward profile."
         ];
-        const randomIndex = Math.floor(Math.random() * responses.length);
-        const response = responses[randomIndex];
-    // You can add your custom conditions based on age, name or risk
-    // Here's a simple condition just for demonstration
+
+        const youthResponses = [
+            "Did you know Bitcoin is a digital currency, unlike any other?",
+            "Ever heard of Satoshi Nakamoto? That's the mysterious creator of Bitcoin!",
+            "Dive into the world of blockchain, and you'll find Bitcoin at its heart.",
+            "Imagine a world without banks - that's what Bitcoin envisions!",
+            "Curious about cryptography? Bitcoin's a great place to start exploring.",
+            "Bitcoin's not just coins, but a tech revolution!",
+            "In the digital realm, Bitcoin is like the king of the castle.",
+            "Ever dreamt of being a miner, but with computers? That's Bitcoin mining!",
+            "If the internet had its currency, it would probably be Bitcoin.",
+            "From gaming to global finance, Bitcoin's making waves.",
+            "Have a knack for tech? You might enjoy understanding how Bitcoin works!",
+            "At the intersection of finance and technology, there lies Bitcoin.",
+            "For the geeks and the curious, Bitcoin offers a world of intrigue.",
+            "Want to solve complex puzzles? Bitcoin miners do that every day!",
+            "If coins could talk, Bitcoin would have some wild stories.",
+            "In the vast ocean of digital currencies, Bitcoin was the first drop.",
+            "Bitcoin: where mathematics meets money!",
+            "Ever wondered what money could look like in 2050? Some say it might resemble Bitcoin.",
+            "Curiosity didn't just kill the cat; it led some to discover Bitcoin.",
+            "Dive into the Bitcoin rabbit hole, and you'll find a universe of wonders."
+    ];
+
+    const randomIndex = Math.floor(Math.random() * responses.length);
+    if ( age < 18) {
+        response = youthResponses[Math.floor(Math.random() * youthResponses.length)];
+    } else {
+        response = responses[randomIndex];
+    }
     output.textContent = `Hello, ${name}! ${response}`;
 }
