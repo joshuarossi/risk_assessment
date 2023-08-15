@@ -23,7 +23,8 @@
         </select>
         
         <button onclick="checkRisk()">Submit</button>
-        
+
+        <p>Suggested Activity: </p>
         <p id="output"></p>
     </div>
     <script src="script.js"></script>
