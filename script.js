@@ -77,8 +77,5 @@ function checkRisk() {
         response = responses[randomIndex];
     }
     const message = `Hello, ${name}! ${response}`;
-    for (const char of message) {
-        output.textContent = output.textContent += char; 
-    }
-    
+    output.textContent = message
 }
